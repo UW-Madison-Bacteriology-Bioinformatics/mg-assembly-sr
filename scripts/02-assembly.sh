@@ -1,12 +1,12 @@
 #!/bin/bash
-# this scripts run assembly on the trimmed, host-removed reads.
+
 SAMPLE="$1"
 CPU="$2"
 
 ls -lh
 
-spades.py -1 ${SAMPLE}_R.non.host.R1.fastq.gz \
-	-2 ${SAMPLE}_R.non.host.R2.fastq.gz \
+spades.py -1 ${SAMPLE}_out.R1.fastq.gzz \
+	-2 ${SAMPLE}_out.R2.fastq.gz \
 	-o ${SAMPLE}_spades_output \
 	--meta \
 	--only-assembler \

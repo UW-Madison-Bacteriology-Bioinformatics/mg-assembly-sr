@@ -17,8 +17,8 @@ output = logs/trimming_$(sample).out
 requirements = (HasCHTCStaging == true) && (OpSysMajorVer > 7)
 
 # Change depending on your file sizes.
-request_cpus = 8
-request_memory = 100GB
+request_cpus = 16
+request_memory = 64GB
 request_disk = 500GB
 
 

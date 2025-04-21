@@ -1,0 +1,7 @@
+JOB fastp scripts/01-fastp.sub
+VARS fastp samples="sampleC" staging="/staging/ptran5"
+
+JOB Assembly scripts/02-assembly.sub
+VARS Assembly samples="sampleC" staging="/staging/ptran5"
+
+PARENT fastp CHILD Assembly

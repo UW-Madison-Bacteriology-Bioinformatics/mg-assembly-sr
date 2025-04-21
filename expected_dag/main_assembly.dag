@@ -1,0 +1,4 @@
+SUBDAG EXTERNAL sampleA assembly_sampleA.dag
+SUBDAG EXTERNAL sampleB assembly_sampleB.dag
+SUBDAG EXTERNAL sampleC assembly_sampleC.dag
+CONFIG maximum_dagman_jobs.dag

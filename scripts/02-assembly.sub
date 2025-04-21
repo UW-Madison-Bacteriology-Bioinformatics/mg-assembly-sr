@@ -1,0 +1,23 @@
+# Provide HTCondor with the name of your .sif file and universe information
+container_image = docker://staphb/spades:4.1.0
+
+executable = 02-assembly.sh
+arguments = $(sample) $(request_cpus)
+
+# Include other files that need to be transferred here.
+transfer_input_files = file://$(staging)/$(sample)_out.R1.fastq.gz, file://$(staging)/$(sample)_out.R2.fastq.gz
+transfer_output_files = $(sample)_spades_output.tar.gz, $(sample)_spades_output/scaffolds.fasta
+transfer_output_remaps = "$(sample)_spades_output.tar.gz=file://$(staging)/$(sample)_spades_output.tar.gz;$(sample)_spades_output/scaffolds.fasta=file://$(staging)/$(sample)_scaffolds.fasta"
+
+log = logs/assembly_$(sample)_$(Process).log
+error = logs/assembly_$(sample)_$(Process).err
+output = logs/assembly_$(sample)_$(Process).out
+
+requirements = (HasCHTCStaging == true) && (OpSysMajorVer > 7)
+
+# Make sure you request enough disk for the container image in addition to your other input files
+request_cpus = 16
+request_memory = 32GB
+request_disk = 20GB 
+
+queue

@@ -7,9 +7,9 @@ Short read metagenomic assembly
 This expects that you have a staging folder, with Illumina paired-end reads in the following format:
 
 ```
-/staging/netID
---- /staging/netID/${SAMPLE}.R1.fastq.gz
---- /staging/netID/${SAMPLE}.R2.fastq.gz
+/staging/netID/my_project/
+--- /staging/netID/my_project/${SAMPLE}_R1_L001.fastq.gz
+--- /staging/netID/my_projects/${SAMPLE}_R2_L001.fastq.gz
 ```
 
 # Run the code
@@ -39,11 +39,11 @@ nano samples.txt
 Create a custom dag for each sample:
 ```
 [ptran5@ap2002 mg-assembly-sr]$ bash create_sample_dag.sh 
-Usage: create_sample_dag.sh <samples_list> <netid>
+Usage: create_sample_dag.sh <samples_list> <path_to_reads>
 ```
 
 ```
-bash create_sample_dag.sh samples.txt ptran5
+bash create_sample_dag.sh samples.txt /staging/ptran5/my_project/
 ```
 
 Create a custom dag with everything:

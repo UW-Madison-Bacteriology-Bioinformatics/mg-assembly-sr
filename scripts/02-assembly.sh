@@ -8,7 +8,7 @@ ls -lh
 spades.py -1 ${SAMPLE}_out.R1.fastq.gz \
 	-2 ${SAMPLE}_out.R2.fastq.gz \
 	-o ${SAMPLE}_spades_output \
-	--meta \
+	--isolate \
 	--only-assembler \
 	-t ${CPU} \
 	-m 600

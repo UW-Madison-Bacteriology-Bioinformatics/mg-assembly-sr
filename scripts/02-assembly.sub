@@ -1,7 +1,7 @@
 # Provide HTCondor with the name of your .sif file and universe information
 container_image = docker://staphb/spades:4.1.0
 
-executable = 02-assembly.sh
+executable = scripts/02-assembly.sh
 arguments = $(sample) $(request_cpus)
 
 # Include other files that need to be transferred here.
@@ -17,7 +17,7 @@ requirements = (HasCHTCStaging == true) && (OpSysMajorVer > 7)
 
 # Make sure you request enough disk for the container image in addition to your other input files
 request_cpus = 16
-request_memory = 120GB
-request_disk = 500GB 
+request_memory = 64GB
+request_disk = 50GB 
 
 queue

@@ -1,7 +1,7 @@
 JOB fastp scripts/01-fastp.sub
-VARS fastp samples="PLACEHOLDER_WORD" staging="/staging/NETID_PLACEHOLDER"
+VARS fastp samples="PLACEHOLDER_WORD" staging="NETID_PLACEHOLDER"
 
 JOB Assembly scripts/02-assembly.sub
-VARS Assembly samples="PLACEHOLDER_WORD" staging="/staging/NETID_PLACEHOLDER"
+VARS Assembly samples="PLACEHOLDER_WORD" staging="NETID_PLACEHOLDER"
 
 PARENT fastp CHILD Assembly

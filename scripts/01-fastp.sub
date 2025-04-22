@@ -1,12 +1,11 @@
 # Provide HTCondor with the name of your .sif file and universe information
 container_image = docker://staphb/fastp:0.24.0
 
-executable = 01-fastp.sh
+executable = scripts/01-fastp.sh
 arguments = $(sample) $(request_cpus) $(staging)
 
 # Include other files that need to be transferred here.
-transfer_input_files = file://$(staging)/$(sample).R1.fastq.gz, file://$(staging)/$(sample).R2.fastq.gz
-
+transfer_input_files = file://$(staging)/$(sample)_R1_001.fastq.gz, file://$(staging)/$(sample)_R2_001.fastq.gz
 transfer_output_files = $(sample)_out.R1.fastq.gz, $(sample)_out.R2.fastq.gz
 transfer_output_remaps = "$(sample)_out.R1.fastq.gz=file://$(staging)/$(sample)_out.R1.fastq.gz;$(sample)_out.R2.fastq.gz=file://$(staging)/$(sample)_out.R2.fastq.gz"
 
@@ -17,9 +16,9 @@ output = logs/fastp_$(sample).out
 requirements = (HasCHTCStaging == true) && (OpSysMajorVer > 7)
 
 # Change depending on your file sizes.
-request_cpus = 16
-request_memory = 64GB
-request_disk = 500GB
+request_cpus = 8
+request_memory = 32GB
+request_disk = 50GB
 
 
 queue

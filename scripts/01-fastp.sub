@@ -9,6 +9,13 @@ transfer_input_files = file://$(staging)/$(sample)_R1_001.fastq.gz, file://$(sta
 transfer_output_files = $(sample)_out.R1.fastq.gz, $(sample)_out.R2.fastq.gz
 transfer_output_remaps = "$(sample)_out.R1.fastq.gz=file://$(staging)/$(sample)_out.R1.fastq.gz;$(sample)_out.R2.fastq.gz=file://$(staging)/$(sample)_out.R2.fastq.gz"
 
+### IF YOU ARE USING THE RESEARCHDRIVE/CHTC METHOD ####
+### REPLACE <PINetid> with the PI's netid.
+# transfer_input_files = transfer_input_files = pelican://chtc.wisc.edu/researchdrive/<PINetid>/CHTC/$(sample)_R1_001.fastq.gz, pelican://chtc.wisc.edu/researchdrive/<PINetid>/CHTC/$(sample)_R2_001.fastq.gz
+# transfer_output_files = $(sample)_out.R1.fastq.gz, $(sample)_out.R2.fastq.gz
+# transfer_output_remaps = "$(sample)_out.R1.fastq.gz=pelican://chtc.wisc.edu/researchdrive/<PINetid>/CHTC/$(sample)_out.R1.fastq.gz;$(sample)_out.R2.fastq.gz=pelican://chtc.wisc.edu/researchdrive/<PINetid>/CHTC/$(sample)_out.R2.fastq.gz"
+#################################################
+
 log = logs/fastp_$(sample).log
 error = logs/fastp_$(sample).err
 output = logs/fastp_$(sample).out

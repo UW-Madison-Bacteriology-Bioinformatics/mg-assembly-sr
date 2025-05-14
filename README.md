@@ -8,6 +8,11 @@ This DAGman workflow allows the user to trim short-read (illumina) sequences, an
 
 # 🖥️  Infrastructure
 This workflow uses DAGman technology, which runs each sample automatically through `fastp` and `spades`, and is meant to be run on CHTC.
+Each sample has it's own DAG ("sample dag"), meaning that trimming and assembly is performed independently for each sample, and is automatically submitted as a job.
+The "main" dag, submits all the sample's DAG at once.
+
+![mg-assembly](https://github.com/user-attachments/assets/e23c4f70-7016-4ca4-94cc-f3021bd19308)
+
 
 # 🔁 Recreate this workflow; Instructions
 

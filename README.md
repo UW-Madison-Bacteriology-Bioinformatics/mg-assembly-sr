@@ -1,16 +1,25 @@
+![Status - In progress](https://img.shields.io/badge/Status-InProgress-2ea44f)
+
 # mg-assembly-sr
 Short read metagenomic assembly
 
-# Instructions
+# ✨ Overview
+This DAGman workflow allows the user to trim short-read (illumina) sequences, and assemble them using SPADES. This can be used in preparation for metagenomic binning, for example using [binning_wf](https://github.com/UW-Madison-Bacteriology-Bioinformatics/binning_wf/tree/after-amr-metagenomics)
+
+# 🖥️  Infrastructure
+This workflow uses DAGman technology, which runs each sample automatically through `fastp` and `spades`, and is meant to be run on CHTC.
+
+# 🔁 Recreate this workflow; Instructions
 
 # Set up your folders
-This expects that you have a staging folder, with Illumina paired-end reads in the following format:
+The workflow expects that you have a staging folder, with Illumina paired-end reads in the following format:
 
 ```
 /staging/netID/my_project/
 --- /staging/netID/my_project/${SAMPLE}_R1_L001.fastq.gz
 --- /staging/netID/my_projects/${SAMPLE}_R2_L001.fastq.gz
 ```
+
 
 # Run the code
 
@@ -35,6 +44,11 @@ nano samples.txt
 # Make sure there is a line return after your last sample
 #exit
 ```
+
+> [!NOTE]
+> Want to use the ResearchDrive/chtc folder to transfer and export your files directly to research drive?
+> Navigate to the scripts folder, and comment out the section surrounded by "####" in the 2 `.sh` files, and replace the netID with that of your PI.
+
 
 Create a custom dag for each sample:
 ```

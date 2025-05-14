@@ -20,18 +20,28 @@ The workflow expects that you have a staging folder, with Illumina paired-end re
 --- /staging/netID/my_projects/${SAMPLE}_R2_L001.fastq.gz
 ```
 
+You can also have your files directly in the chtc folder of ResearchDrive, if you lab has that set-up.
+```
+/researchdrive/ptran5/
+--- /researchdrive/ptran5/my_project/${SAMPLE}_R1_L001.fastq.gz
+--- /researchdrive/ptran5/my_project/${SAMPLE}_R2_L001.fastq.gz
+```
+
 
 # Run the code
 
 Make a copy of this folder to your chtc account:
 
 ```
+# login
+ssh netid@[chtc.address]
+# Download a copy of the code from github
 git clone https://github.com/UW-Madison-Bacteriology-Bioinformatics/mg-assembly-sr.git
 ```
 
 Make the bash script executable:
 ```
-cd md-assembly-sr
+cd mg-assembly-sr/scripts
 chmod +x .sh
 ```
 

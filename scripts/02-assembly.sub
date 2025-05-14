@@ -9,6 +9,15 @@ transfer_input_files = file://$(staging)/$(sample)_out.R1.fastq.gz, file://$(sta
 transfer_output_files = $(sample)_spades_output.tar.gz, $(sample)_spades_output/scaffolds.fasta
 transfer_output_remaps = "$(sample)_spades_output.tar.gz=file://$(staging)/$(sample)_spades_output.tar.gz;$(sample)_spades_output/scaffolds.fasta=file://$(staging)/$(sample)_scaffolds.fasta"
 
+
+### IF YOU ARE USING THE RESEARCHDRIVE/CHTC METHOD ####
+### REPLACE <PINetid> with the PI's netid.
+transfer_input_files = pelican://chtc.wisc.edu/researchdrive/<PI NetID>/CHTC/$(sample)_out.R1.fastq.gz, pelican://chtc.wisc.edu/researchdrive/<PI NetID>/CHTC/$(sample)_out.R2.fastq.gz
+transfer_output_files = $(sample)_spades_output.tar.gz, $(sample)_spades_output/scaffolds.fasta
+transfer_output_remaps = "$(sample)_spades_output.tar.gz=pelican://chtc.wisc.edu/researchdrive/<PI NetID>/CHTC/$(sample)_spades_output.tar.gz;$(sample)_spades_output/scaffolds.fasta=pelican://chtc.wisc.edu/researchdrive/<PI NetID>/CHTC/$(sample)_scaffolds.fasta"
+#################################################
+
+
 log = logs/assembly_$(sample)_$(Process).log
 error = logs/assembly_$(sample)_$(Process).err
 output = logs/assembly_$(sample)_$(Process).out

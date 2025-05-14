@@ -2,7 +2,7 @@
 container_image = docker://staphb/spades:4.1.0
 
 executable = scripts/02-assembly.sh
-arguments = $(sample) $(request_cpus)
+arguments = $(sample) $(request_cpus) $(request_memory)
 
 # Include other files that need to be transferred here.
 transfer_input_files = file://$(staging)/$(sample)_out.R1.fastq.gz, file://$(staging)/$(sample)_out.R2.fastq.gz
